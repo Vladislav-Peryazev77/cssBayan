@@ -1,0 +1,54 @@
+:root {
+    --bgc: #F6F6EC;
+    --textcolor: #0059D9;
+    --textcolor-hover: #010101;
+}
+
+body {
+    background-color: var(--bgc);
+}
+
+.page {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.custom-bayan__h1 {
+    color: var(--textcolor-hover);
+    font-family: 'Tilt Warp', cursive;
+    font-size: 1.5em;
+}
+
+
+.custom-bayan {
+    padding: 0 10%;
+    width: 80%;
+}
+.custom-bayan__li {
+    font-family: 'Tilt Warp', cursive;
+    position: relative;
+    color: var(--textcolor);
+    border-top: 0.5px solid #DEE3E5;
+    padding: 5px 0;
+}
+.custom-bayan__li:hover {
+    color: var(--textcolor-hover)
+}
+
+.custom-bayan__li > input[type="radio"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+input[type="radio"]:checked ~ .li__meme {
+    max-height: 250px;
+    transition: 1s;
+}
+
+
+.li__meme {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
