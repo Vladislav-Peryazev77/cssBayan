@@ -75,7 +75,6 @@ input[type="radio"]:checked  label .label__span {
     transform: rotate(45deg);
 }
 
-
 .accordion__item:hover {
     cursor: pointer;
 }
