@@ -2,53 +2,85 @@
     --bgc: #F6F6EC;
     --textcolor: #0059D9;
     --textcolor-hover: #010101;
+    --border-top: #D9DFE4;
 }
 
 body {
     background-color: var(--bgc);
+    font-family: 'Tilt Warp';
 }
 
 .page {
-    max-width: 320px;
+    max-width: 80vw;
     margin: 0 auto;
 }
 
-.custom-bayan__h1 {
+.item__h1 {
     color: var(--textcolor-hover);
-    font-family: 'Tilt Warp', cursive;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
-
-.custom-bayan {
-    padding: 0 10%;
-    width: 80%;
+.item__meme {
+    text-align: center;
 }
-.custom-bayan__li {
-    font-family: 'Tilt Warp', cursive;
-    position: relative;
+
+.item__label {
     color: var(--textcolor);
-    border-top: 0.5px solid #DEE3E5;
-    padding: 5px 0;
-}
-.custom-bayan__li:hover {
-    color: var(--textcolor-hover)
+    border-top: solid 1px var(--border-top);
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+    min-height: 2em;
+    cursor: pointer;
 }
 
-.custom-bayan__li > input[type="radio"] {
-    position: absolute;
-    z-index: -1;
+.label__span {
+    color: var(--textcolor-hover);
+    font-size: 1.5em;
+    font-weight: 500;
+}
+ 
+label + input[type="radio"], label span {
+    display: none;
+}
+
+.item__meme {
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
 }
 
-input[type="radio"]:checked ~ .li__meme {
-    max-height: 250px;
-    transition: 1s;
+label + input[type="radio"]:checked + .item__meme {
+    max-height: 60vh;
+    transition: 0.5s;
+    opacity: 100%;    
+}
+.accordion__item:hover > .item__meme {
+    max-height: 60vh;
+    transition: 0.5s ease;  
+    opacity: 100%;     
+}
+.accordion:hover .label__span {
+    display: flex;
+}
+
+.accordion__item:hover .label__span {
+    transform: rotate(45deg);
+}
+
+input[type="radio"]:checked  label .label__span {
+    transform: rotate(45deg);
+}
+
+.accordion__item:hover {
+    cursor: pointer;
 }
 
 
-.li__meme {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s;
-}
+
+
+
+
