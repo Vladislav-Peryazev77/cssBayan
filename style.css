@@ -17,24 +17,24 @@ body {
 
 .item__h1 {
     color: var(--textcolor-hover);
-    font-size: 2em;
-}
-
-.item__meme {
-    text-align: center;
+    font-size: 1.5em;
 }
 
 .item__label {
     color: var(--textcolor);
     border-top: solid 1px var(--border-top);
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     padding: 0.5em 0;
     min-height: 2em;
     cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .label__span {
@@ -43,7 +43,7 @@ body {
     font-weight: 500;
 }
  
-label + input[type="radio"], label span {
+input[type="radio"], label span {
     display: none;
 }
 
@@ -51,16 +51,17 @@ label + input[type="radio"], label span {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    text-align: center;
 }
 
-label + input[type="radio"]:checked + .item__meme {
+input[type="radio"]:checked + label .item__meme{
     max-height: 60vh;
     transition: 0.5s;
     opacity: 100%;    
 }
-.accordion__item:hover > .item__meme {
+.accordion__item:hover .item__meme {
     max-height: 60vh;
-    transition: 0.5s ease;  
+    transition: 1s ease;  
     opacity: 100%;     
 }
 .accordion:hover .label__span {
@@ -71,12 +72,50 @@ label + input[type="radio"]:checked + .item__meme {
     transform: rotate(45deg);
 }
 
-input[type="radio"]:checked  label .label__span {
+input[type="radio"]:checked + label .label__span{
     transform: rotate(45deg);
 }
 
-.accordion__item:hover {
+.accordion:hover label{
     cursor: pointer;
+    color: var(--textcolor-hover)
+}
+
+.accordion__item:active label, .accordion__item:active label .label__span{
+    color: var(--textcolor);
+}
+
+input[type="radio"]:checked + label, input[type="radio"]:checked + label .label__span {
+    color: var(--textcolor-hover);
+}
+
+@media(min-width: 820px) {
+    .page {
+        max-width: 70vw;
+    }
+    .item__h1 {
+        font-size: 1.8em;
+    }
+    .label__span {
+        font-size: 1.1em;
+    }
+    .item__label {
+        font-size: 1.6em;
+    }
+}
+@media(min-width: 1500px) {
+    .page {
+        max-width: 55vw;
+    }
+    .item__h1 {
+        font-size: 2em;
+    }
+    .label__span {
+        font-size: 1.4em;
+    }
+    .item__label {
+        font-size: 1.8em;
+    }
 }
 
 
